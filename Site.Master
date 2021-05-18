@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Pharmacy_Management_System.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <%-- css files --%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    
+    <%-- JS files --
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script> --%>
+   
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+
+    <%-- Our Custom CSS --%>
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <%-- NavBar --%>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-info pe-md-5">
+                <a class="navbar-brand" href="#">
+                    <img
+                        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/navbar-logo-img.png"
+                        class="navbar-image"
+                        alt=""
+                    />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav mr-auto">
+                        <li><a class="nav-link active" href="homepage.aspx">Home</a></li>
+                        <li><a class="nav-link" href="#">About Us</a></li>
+					    <li><a class="nav-link" href="#">Terms</a></li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">View Medicines</asp:LinkButton>
+                        </li>
+
+                        <li>
+                            <asp:ImageButton CssClass="mx-2" ID="ImageButton1" runat="server" ImageUrl="~/imgs/cart_img.png" Width="30px" OnClick="ImageButton1_Click" />
+                        </li>
+
+                        <li>
+                            <asp:ImageButton CssClass="mx-2" ID="ImageButton2" runat="server" ImageUrl="~/imgs/wishlist1.png" Width="30px" OnClick="ImageButton2_Click" />
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">User Login</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" >Sign Up</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="False">Logout</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" Visible="False">Hello User</asp:LinkButton>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+        
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" Visible="False" OnClick="LinkButton6_Click">Pharmacist Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="False">Member Management</asp:LinkButton>                       
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="False">Medicines Inventory</asp:LinkButton>                    
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" Visible="False">Requested Orders</asp:LinkButton>
+                             &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" Visible="False" OnClick="LinkButton11_Click">Category Management</asp:LinkButton>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="color:whitesmoke">&copy All right Reversed. <a class="footerlinks" href="#" target="_blank">Pharmacy Management System</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ./Footer -->
+
+    </form>
+</body>
+</html>
